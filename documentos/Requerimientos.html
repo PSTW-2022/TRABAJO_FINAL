@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Requerimientos</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ee99d3d9-ff54-40b6-9534-099059227f75" class="page serif"><header><h1 class="page-title">Requerimientos</h1></header><div class="page-body"><p id="dbbe4f63-1e35-4be0-8c91-fc05cd52f53f" class="">
+</p><h2 id="e1bccad0-a7e3-49b7-bacf-f2139191aa35" class="block-color-yellow">Detallados</h2><h2 id="33c2f8f3-cfcd-4cd5-9afa-1db2ecb1e228" class="">Tabla trabajo</h2><ul id="789ec3cd-b77a-4733-b2c2-a118c05ffca1" class="bulleted-list"><li style="list-style-type:disc">Identificación factura</li></ul><ul id="bcdbd0d0-8c23-413a-abbc-464e56c1de16" class="bulleted-list"><li style="list-style-type:disc">Nombre odontologo (no se requieren datos)</li></ul><ul id="60a7248e-08ad-4d63-97c9-039efe2bba00" class="bulleted-list"><li style="list-style-type:disc">Nombre Paciente (no se requieren datos)</li></ul><ul id="9c80403d-9f18-4ce5-af0e-d559a572798d" class="bulleted-list"><li style="list-style-type:disc">fecha de llegada</li></ul><ul id="d5086023-4750-438d-8cb4-186573f602af" class="bulleted-list"><li style="list-style-type:disc">fecha finalización</li></ul><ul id="8714693a-72b2-4738-a0c9-4190bc5f0e14" class="toggle"><li><details open=""><summary>Clase de trabajo</summary><ul id="0912cc9c-c0f3-4361-8cef-c274a8ff20ba" class="toggle"><li><details open=""><summary>Protesis</summary><ul id="145da4a5-d819-4396-9424-5d406b23403a" class="toggle"><li><details open=""><summary>Fija</summary><ul id="4b81acd9-bda4-4d84-b516-e8f3f12447ff" class="toggle"><li><details open=""><summary>Material</summary><p id="530c204c-4547-4556-b235-506b6f32c621" class="">Metal</p><p id="c5f5b22f-55e3-466d-aaa0-773baa1408e6" class="">Circonio</p><p id="429171cb-2433-488f-9c2f-a7112a40d3fc" class="">é-max</p></details></li></ul><ul id="befef7cb-57a9-4a11-9c2b-937c20029f59" class="toggle"><li><details open=""><summary>Marca de implante</summary><p id="726dfe13-d851-4489-bdf0-72fa015b358e" class="">Miss</p><p id="0b6bade3-bcd5-45ed-80aa-36e220272b9e" class="">Microdent System</p><p id="4bbe19c5-1dcb-4066-ba23-f8c2fe02b51f" class="">Nobel blocare</p><p id="bf391146-51ff-4af1-9862-5884b6b703e4" class="">Straumann</p><p id="7648c982-54a5-4f5c-a019-15db96034037" class="">Zimmer biomet 3i</p><p id="b807702d-4e4d-4508-ad3e-c0d47fe3a14f" class="">Phibo</p></details></li></ul><ul id="8891a3c3-5bd5-4ec8-95b0-d74eeb0ffa43" class="toggle"><li><details open=""><summary>Tipo ajueste</summary><p id="2c1fb5a7-f5f0-4b72-9ea8-54aa75105e0d" class="">Era</p><p id="36b9a48b-dea8-4147-b813-d6e73ea25174" class="">bredent</p></details></li></ul><ul id="ad82383f-f656-49ef-a5d0-9711b8a27eaf" class="toggle"><li><details open=""><summary>Dientes</summary><ul id="12721e76-006a-4d6a-9e28-a6051732e3f6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">31 - 38 Superior izquierdo</span></li></ul><ul id="ba3069ee-0dc0-4c51-9328-56934abd17f9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">41 - 48 Inferior derecho</span></li></ul><ul id="d630fe86-8cec-4e2f-b22f-b5e08524bd63" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">11 - 18 Superior derecho</span></li></ul><ul id="df0f6a5f-45c8-4325-8e76-dbfae045d0b2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">21 - 28 Superior izquierdo</span></li></ul></details></li></ul><ul id="e7eb7157-e929-4ae8-a172-8bc2d57e6b2b" class="toggle"><li><details open=""><summary>Color</summary><ul id="2c37a957-9776-4939-a5f2-7d3e5e76b9df" class="toggle"><li><details open=""><summary>A</summary><p id="a91c1050-1005-40f2-9a0b-a311b6ad0ee2" class="">A1</p><p id="c22da589-62aa-4aa1-ba4f-7578763a85d3" class="">A2</p><p id="16cfc701-aee8-4eee-afa1-c4f9808fefd3" class="">A3</p><p id="107e935a-87d4-407c-a538-db8e721d01af" class="">A3.5</p><p id="66e03f64-c21e-43e0-929c-91d98b3734a9" class="">A4</p></details></li></ul><ul id="a52a4a46-f774-4b22-a9ab-f21a305526ed" class="toggle"><li><details open=""><summary>B</summary><p id="15229678-34d3-4651-b486-b20fc65da79f" class="">B1</p><p id="bb96dd5b-6cb9-4eaa-a7e3-2cd0099eac7a" class="">B2</p><p id="48dd6b65-6055-44e8-88f3-ce49b406e449" class="">B3</p><p id="cbf7a9ac-1e4c-470d-b14b-eeed8d1a1b88" class="">
+</p></details></li></ul><ul id="df636741-bfe2-4c11-8bdf-d73c6da76c9c" class="toggle"><li><details open=""><summary>C</summary><p id="cb2fd5ee-8a65-443c-898e-170cfcd8a4d5" class="">C1</p><p id="bad3032e-9e67-43f0-87ad-ef5477d247e0" class="">C2</p><p id="b6f2315f-d7ea-4e21-a23a-c6287048ded0" class="">C3</p></details></li></ul><ul id="dc04859f-3358-4a6e-8021-33e1a60e2642" class="toggle"><li><details open=""><summary>D</summary><p id="8364e6b7-6283-4778-95ca-1d3fc881872a" class="">D2</p><p id="43a29b7c-4c87-49a9-b72b-536509a42032" class="">D3</p><p id="f0105af7-190d-4a20-a6c3-5f9b9f30e461" class="">D4</p></details></li></ul><p id="1cf20e89-f216-4eef-86f2-ed6ad9e5639a" class="">
+</p></details></li></ul><ul id="af2e03d9-b15c-4632-9103-1e320d7476a8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Estructura metalica</span></li></ul></details></li></ul><ul id="5af2431f-27a9-47c1-acf2-00f33a562f37" class="toggle"><li><details open=""><summary>Removible metal</summary><ul id="1839f882-0b5e-4b50-b832-2d826e91c96b" class="toggle"><li><details open=""><summary>Dientes</summary><ul id="d931a790-589c-47a2-b3ff-8efc012f6188" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">31 - 38 Superior izquierdo</span></li></ul><ul id="7f652c0f-ea79-4a4a-ab28-982bfab8bd2c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">41 - 48 Inferior derecho</span></li></ul><ul id="2e3e6335-8299-4ec3-bcfa-ee797238a600" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">11 - 18 Superior derecho</span></li></ul><ul id="fce1c016-f103-47f3-81a4-08209a9ad3d3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">21 - 28 Superior izquierdo</span></li></ul></details></li></ul><ul id="defd51b4-a796-4583-bc9c-17f7e92285fb" class="toggle"><li><details open=""><summary>Color</summary><ul id="125c6a94-04ca-45cf-8203-072e6d6cc989" class="toggle"><li><details open=""><summary>A</summary><p id="97f2afb9-b51f-4ec0-a300-8d5865231a7a" class="">A1</p><p id="1704792e-aade-4996-b326-6ed8be922a29" class="">A2</p><p id="4401f287-fcc1-48c2-83f0-435412b55fe5" class="">A3</p><p id="0b4c7636-5b6a-4078-988c-d5fadf427b68" class="">A3.5</p><p id="cfa5878a-be1c-4072-8ee2-8601e1e28f29" class="">A4</p></details></li></ul><ul id="810948b1-b955-4e94-9d9f-84259b2a6ff8" class="toggle"><li><details open=""><summary>B</summary><p id="4837491d-9ca3-42fa-a87d-9c07182d891c" class="">B1</p><p id="a3d147a7-5dcf-452b-bad8-3f5aa7e46f83" class="">B2</p><p id="a97c69e5-0553-4858-95d8-be3e08cd5fa1" class="">B3</p><p id="190fa530-78d5-44b8-baab-3e9621e4d2e8" class="">
+</p></details></li></ul><ul id="4dae233e-a74e-4fbc-89ec-5d48f6cefcc6" class="toggle"><li><details open=""><summary>C</summary><p id="81d3b5dc-3e38-4bcb-b295-302c3e772d04" class="">C1</p><p id="366f73c1-dc13-48d4-b1c6-3089cf89a2c9" class="">C2</p><p id="7ec161f9-921f-4a08-82c2-f1e926f73728" class="">C3</p></details></li></ul><ul id="0051feaf-1a5f-46ea-9f25-b604496aa033" class="toggle"><li><details open=""><summary>D</summary><p id="1a0b9762-078b-4d5e-84fe-16e535cdf875" class="">D2</p><p id="157e47b3-c522-41e7-935b-3eaa52595f44" class="">D3</p><p id="4db0e196-abd2-4b19-adf9-f2ba4795ab1c" class="">D4</p></details></li></ul><p id="61976f52-f1cb-493c-ba67-9f85360a757c" class="">
+</p></details></li></ul></details></li></ul><ul id="9c7bd0de-ce83-44ff-b4c0-981e15288a1f" class="toggle"><li><details open=""><summary>Removible flexible</summary><ul id="eec3f537-fa3c-433c-8901-f61cdcfe9143" class="toggle"><li><details open=""><summary>Dientes</summary><ul id="6528ed7c-3488-4e12-a17c-d1e99bffba45" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">31 - 38 Superior izquierdo</span></li></ul><ul id="03e6fded-2269-43ed-8b68-3659d53b8e68" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">41 - 48 Inferior derecho</span></li></ul><ul id="d47d903f-f01f-4e9a-91d8-3704b6c820a4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">11 - 18 Superior derecho</span></li></ul><ul id="60f80ae7-cf77-40d8-b16c-1dc86f4b20e6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">21 - 28 Superior izquierdo</span></li></ul></details></li></ul><ul id="db57a48b-1e3c-4396-9f9d-acd2d99342b4" class="toggle"><li><details open=""><summary>Dientes</summary><ul id="9f8959e8-05d2-4859-a96e-326888a6f808" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">31 - 38 Superior izquierdo</span></li></ul><ul id="fec137b3-6041-4d1d-a0ae-d7019e447cfa" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">41 - 48 Inferior derecho</span></li></ul><ul id="65fc8afb-ad11-45dd-9073-0a3f2e76d9e5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">11 - 18 Superior derecho</span></li></ul><ul id="5ca1aa96-4e88-4c3e-b000-87f3f56f1d05" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">21 - 28 Superior izquierdo</span></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="b1dd6342-ac8d-4ab8-8659-45a365376144" class="toggle"><li><details open=""><summary>Placas Bruxismo</summary><ul id="3158fdad-8670-42ca-b484-5129c8b71bf6" class="toggle"><li><details open=""><summary>Material</summary><p id="096065c1-732b-4dda-822c-3df9ab718d33" class="">Termocurado</p><p id="8604e2d9-72d9-4e05-9c8d-e4001eb0e86d" class="">Extraconfor</p></details></li></ul></details></li></ul><ul id="1db8aaa6-25e7-4bf9-86f0-307aa9b2c9f7" class="toggle"><li><details open=""><summary>Provicionales</summary><ul id="8e65e358-bc61-4114-8857-ed6f1622a22e" class="toggle"><li><details open=""><summary>Color</summary><ul id="62aa0f91-6b0f-406f-9f67-64fb644410b9" class="toggle"><li><details open=""><summary>A</summary><p id="8564b38c-96ba-4175-8bf9-42d84d5fa6d3" class="">A1</p><p id="3758d568-992e-4d60-8642-bc3a61152fbd" class="">A2</p><p id="ead66675-bfed-4355-a537-0ba936660cc9" class="">A3</p><p id="3611fc88-34bb-4c9f-b7f4-c5614fb7d39b" class="">A3.5</p><p id="312e826d-b9a2-43da-8de7-99a1c43754e3" class="">A4</p></details></li></ul><ul id="634f3a6d-97eb-489a-a507-8c983e1191c2" class="toggle"><li><details open=""><summary>B</summary><p id="02944f49-39e8-40f1-87fa-17f2c22b6f2b" class="">B1</p><p id="b48a2e85-0e93-4191-ba38-acd3db20bbf0" class="">B2</p><p id="fa62bcee-c800-42e6-8810-544c2e732a8e" class="">B3</p><p id="2467f040-61c7-4d7a-b0ac-93529140a2a5" class="">
+</p></details></li></ul><ul id="ad13d29c-f77b-4b31-b64a-42d12dbbb4d1" class="toggle"><li><details open=""><summary>C</summary><p id="0bfe66be-0e57-4734-9a16-17e2ecfec0e2" class="">C1</p><p id="f747d295-f5f1-4e0e-992e-fc1fa939b9e4" class="">C2</p><p id="08c62c3b-7faa-4320-8484-b69c239d0f0f" class="">C3</p></details></li></ul><ul id="373e737a-5cdd-445a-86b8-9ba9ad250664" class="toggle"><li><details open=""><summary>D</summary><p id="c9457044-6dbe-4d14-8e7c-03b3a6d108f2" class="">D2</p><p id="9811e5c5-bbfb-42b2-aaa2-3fab04893e2d" class="">D3</p><p id="b3f2b8d3-419d-4e5a-b88a-e94eb2834819" class="">D4</p></details></li></ul><p id="37dbd445-00ef-49f8-b4f4-b52f64928157" class="">
+</p></details></li></ul></details></li></ul><ul id="228d67ee-5ead-4cb7-937f-a8cee8e5d26c" class="toggle"><li><details open=""><summary>Protectores Bucales</summary><p id="db357110-9a84-4eec-a7d7-bc94c7d96668" class="">Color (text)</p><ul id="0000d9b0-8603-486b-9514-c7ea65ceba9c" class="toggle"><li><details open=""><summary>Calibre</summary><p id="2059569b-9811-4cea-b926-8a8629dd0090" class="">2</p><p id="468b3ed2-b2b3-4f0b-a5d8-55e7c5c3bdf1" class="">4</p></details></li></ul><ul id="94badec8-2bb2-4301-a005-e4bd6ab34c9c" class="toggle"><li><details open=""><summary>Play Safe</summary><p id="23be7dcb-7008-4223-97a0-d9f8bd94a920" class="">Heavy-pro</p><p id="ba15699f-6b36-4e57-9371-1e4a6d325368" class="">Light-pro</p><p id="02a53601-e925-496e-8c1f-0cc301729fac" class="">Medium</p><p id="f26ebf93-71f1-41b5-b570-206c59d1516b" class="">Light</p></details></li></ul><p id="6664688f-6dbd-4ff7-b0db-480f25f2cbc6" class="">
+</p></details></li></ul></details></li></ul><ul id="b9c7b6fa-7b4d-4431-8145-abed8bf19bcc" class="bulleted-list"><li style="list-style-type:disc">Costo</li></ul><ul id="5cc08749-d9b7-46f6-bc81-298fd71ece43" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Pagado</span></li></ul><ul id="617cca3c-c3b1-4fe2-8bca-35d4f9b08b4d" class="bulleted-list"><li style="list-style-type:disc">Fecha de pago</li></ul><p id="7ba1545d-e4bc-45f1-9627-861ed4c9b7f3" class="block-color-orange">
+</p><p id="70404220-09c0-47a4-b786-d62691481325" class="">
+</p><p id="243f9073-4685-406b-b152-bf6f442f639c" class="">
+</p><h2 id="c2450ed5-c9f2-4fe3-b942-497f7cdcb811" class="block-color-yellow">No detallados</h2><p id="11b5f655-7837-4254-bdf9-4b0ddb1b79f6" class="">
+</p><h3 id="f812bd13-62e4-4434-ac78-e375afb63b56" class="block-color-red">¡ATENCIÓN! NO LEER.</h3><p id="6bef3670-3689-4c34-86c1-7b643aff378c" class="">idFaturacion</p><p id="00965f71-3234-48eb-ab48-6548f3885294" class="">Clase de trabajo: boton desplegable con el tipo de trabajo</p><p id="91f811ff-9962-46ab-870e-2052b6740e05" class="">Observaciones</p><ul id="48bac869-feb0-47c2-8fcb-104b2ce72ce9" class="bulleted-list"><li style="list-style-type:disc">si es protesis fija: clase de material (metal  - circonio - é-max), Marca de implante, Tipo ajuste, tabla de dientes seleccionados, Boton seleccion estructura metalica.</li></ul><p id="321c4948-ab37-46a1-8d9c-5d789ba7c27c" class="">
+</p><ul id="56aa8a14-0d15-462d-b7a3-2cdab58e2876" class="bulleted-list"><li style="list-style-type:disc">Si es protesis removible metal: seleccion de dientes.</li></ul><ul id="6a49f661-985e-4d68-b443-d25ce9aa7382" class="bulleted-list"><li style="list-style-type:disc">Si es removible acrilica: tabla de dientes seleccionados, boton seleccion si lleva gancho, boton seleccion si se realizo cubeta individual.</li></ul><ul id="22cdb40a-a6b2-43f7-b6d2-55e4f1abcad7" class="bulleted-list"><li style="list-style-type:disc">Si es removible flexible: tabla de dientes seleccionados.</li></ul><ul id="3873542c-2d30-47a5-8735-b5ba56e4613d" class="bulleted-list"><li style="list-style-type:disc">placas de bruxismo: Tipo material (termocurado - extraconfor)</li></ul><ul id="c1c1ce79-0378-46e8-bd14-383a519c5950" class="bulleted-list"><li style="list-style-type:disc">Provicionales: tabla de dientes seleccionados.</li></ul><ul id="1ea8e9c2-25c3-4c82-bd1c-f6e4e4672438" class="bulleted-list"><li style="list-style-type:disc">placa miorelajantes: Tipo material (termocurado - extraconfor)</li></ul><ul id="ab766e1a-f41f-4943-a973-a3f0e4eebebd" class="bulleted-list"><li style="list-style-type:disc">Protectores bucales: Color de protector, calibre protector, Playsafe (heavy-pro,light-pro, medium, light)</li></ul><ul id="30d7cf96-f931-492d-ab68-53533ad25cad" class="bulleted-list"><li style="list-style-type:disc">Opciones general (color diente(A0 - A1 - A2 - A3 - A3.5 - A4, B1 - B2 - B3, C1 - C2 - C3, D2 - D3 D4))</li></ul><p id="82856170-011b-41a2-9e3a-22a4355b022b" class="">
+</p><p id="8853755a-5b32-4613-bd77-8104c4bca867" class="">Facturacion (id factura, costo, pagado, fecha de pago)</p><p id="c60f3da6-7cf5-4e27-b736-b8ba0407533d" class="">     </p><p id="e6856abb-5c98-4540-b8ec-7fced8a5d645" class="">
+</p><p id="f1047deb-8cfa-41b5-9523-fd54f95b5870" class="">
+</p></div></article></body></html>
