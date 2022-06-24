@@ -14,14 +14,14 @@
     <nav class="navbar navbar-expand-lg " style="background-color: #15326A">
         <a href="" class="link-light"><img src="../assets/diente.png" alt="logo"></a>
         <div class="container-fluid">
-          <a class="navbar-brand link-light" href="#">Dental App</a>
+          <a class="navbar-brand link-light" href="/">Dental App</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link link-light active" aria-current="page" href="#"><i class="bi bi-person-circle"></i> Iniciar sesión</a>
+                <a class="nav-link link-light active" aria-current="page" href="/ingreso"><i class="bi bi-person-circle"></i> Iniciar sesión</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link link-light active" aria-current="page" href="#"><i class="bi bi-card-list"></i> lista de precios</a>
