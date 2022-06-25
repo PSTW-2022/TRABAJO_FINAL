@@ -21,7 +21,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link link-light active" aria-current="page" href="/ingreso"><i class="bi bi-person-circle"></i> Iniciar sesión</a>
+                <a class="nav-link link-light active" aria-current="page" href="/admin/login"><i class="bi bi-person-circle"></i> Iniciar sesión</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link link-light active" aria-current="page" href="#"><i class="bi bi-card-list"></i> lista de precios</a>
