@@ -1,7 +1,6 @@
 @extends('footer')
 @extends('navBar')
 
-@
 
 
 
