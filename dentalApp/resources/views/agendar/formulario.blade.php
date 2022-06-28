@@ -12,6 +12,8 @@
                         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
                         <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
                         <style>
                         body{
                         font-family: 'Exo', sans-serif;
@@ -37,6 +39,10 @@
                         }
                         </style>
 
+{{-- links para scripts de bootstrap -> funcionalidad boton select --}}
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
                     </head>
                     <body>
                         <div class="container">
@@ -63,49 +69,34 @@
 
 
                         <div class="col-md-6">
-                            <form action="{{ asset('/agendar/create/') }}" method="post">
+                            <form action="{{ route('agendar.separar') }}" method="POST">
                             @csrf
                             <div class="fomr-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" name="titulo">
+                                <input type="text" class="form-control" name="nombre">
                             </div>
                             <div class="fomr-group">
                                 <label>Apellidos</label>
-                                <input type="text" class="form-control" name="titulo">
+                                <input type="text" class="form-control" name="apellidos">
                             </div>
                             <div class="fomr-group">
                                 <label>Documento</label>
-                                <input type="text" class="form-control" name="titulo">
+                                <input type="text" class="form-control" name="documento">
                             </div>
                             {{-- TIPO DE TRABAJO --}}
-                            <div class="fomr-group">
-                                <label>Tipo de trabajo</label>
-                                <input type="text" class="form-control" name="titulo">
+
+                            <div class="form-group" >
+                                <label for="select1">Tipo de trabajo</label>
+                                <select data-live-search="true" class="custom-select" name="tipo_de_trabajo" >
+                                    <option value="" disabled>--SELECCIONE UNA OPCIÓN--</option>
+                                    <option value="Protesis fija">Protesis fija</option>
+                                    <option value="Protesis removible">Protesis removible</option>
+                                    <option value="Protesis acrilica">Protesis acrilica</option>
+                                </select>
+
+
                             </div>
-                            
-                            {{-- <div class="fomr-group" >
-                                <label>Tipo de trabajo</label>
-                                <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></button> 
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <strong>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item active" aria-current="true"">Profilaxis</li>
-                                                    <li class="list-group-item">Retiro de brackets</li>
-                                                    <li class="list-group-item">Limpieza general</li>
-                                                </ul>
-                                            </strong>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            </div>         --}}
-                            {{-- TIPO DE TRABAJO    --}}
-                            
+
                             <div class="fomr-group">
                                 <label>Fecha</label>
                                 <input type="date" class="form-control" name="fecha">

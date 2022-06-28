@@ -23,8 +23,15 @@ class ProductoController extends Controller
         return view('producto.index', compact('productos'))
             ->with('i', (request()->input('page', 1) - 1) * $productos->perPage());
     }
- 
 
+    //función para mostrar la tabla completa de los precios de los productos
+
+    public function tableAll()
+    {
+        $producto = Producto::all();
+
+        return view('precios\tabla', compact('producto'));
+    }
     /**
      * Show the form for creating a new resource.
      *
