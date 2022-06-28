@@ -25,7 +25,7 @@
             <div class="col-6 col-lg-2 mb-3">
               <h5 class="text-light">Autores</h5>
               <ul class="list-unstyled">
-                <li class="mb-2 text-light" >Juan Gonzalez Navarro</li>
+                <li class="mb-2 text-light" >Juan González Navarro</li>
                 <li class="mb-2 text-light">Juan Sebastián Ramírez Aguirre</li>
               </ul>
             </div>

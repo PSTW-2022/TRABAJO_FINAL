@@ -87,7 +87,7 @@
                         <li>
                             <a class="navbar-brand text-light" href="#"><i class="bi bi-card-list"></i>{{ __(' Lista de Precios') }}</a>
                             <ul class='menu-vertical'>
-                                <li><a class="nav-item text-light" href="{{ route('productos.index') }}">{{ __('Ver') }}</a></li>
+                                <li><a class="nav-item text-light" href="{{ route('precios.tabla') }}">{{ __('Ver') }}</a></li>
                                 @if (Auth::check())
                                 <li><a class="nav-item text-light" href="{{ route('productos.index') }}">{{ __('Modificar') }}</a></li>
                                 @endif
@@ -99,12 +99,12 @@
                         </li>
                         @endif
                         <li>
-                            <a class="navbar-brand text-light" href="#"><i class="bi bi-calendar2-date-fill"></i>{{ __(' Citas') }}</a>
+                            <a class="navbar-brand text-light" href="#"><i class="bi bi-calendar2-date-fill"></i>{{ __('Citas') }}</a>
                             <ul class='menu-vertical'>
                                 @if (Auth::check())
                                 <li><a class="nav-item text-light" href="{{ route('productos.index') }}">{{ __('Ver citas') }}</a></li>
                                 @endif
-                                <li><a class="nav-item text-light" href="{{ route('productos.index') }}">{{ __('Agendar') }}</a></li>
+                                <li><a class="nav-item text-light" href="{{ route('agendar.formulario') }}">{{ __('Agendar') }}</a></li>
                             </ul>
                         </li>
                         <li>
