@@ -41,3 +41,5 @@ route::get('/agendar/creada', [App\Http\Controllers\AgendaController::class, 'ci
 route::get('/agendar/visualizar', [App\Http\Controllers\AgendaController::class, 'tableAll'])->name('agendar.visualizar');
 
 
+Route::get('dowload-pdf', [App\Http\Controllers\AgendaController::class, 'generar_pdf'])->name('descargar-pdf');
+

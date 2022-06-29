@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Citas;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 class AgendaController extends Controller
 {
     /**
@@ -105,4 +106,10 @@ class AgendaController extends Controller
     {
         //
     }
+    public function generar_pdf(){
+        $cita= Citas::all();
+        $pdf = PDF::loadView('Agendar.generar_pdf', compact('cita'));
+        return $pdf->download('reporte_citas.pdf');
+    }
+    
 }
