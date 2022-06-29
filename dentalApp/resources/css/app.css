@@ -1,0 +1,47 @@
+
+        .menu-horizontal{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu-horizontal > li > a{
+            display: block;
+            padding:15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-horizontal > li:hover{
+            background-color: #15327f;
+            border-radius: 10%
+        }
+        .menu-vertical{
+            position: absolute;
+            display: none;
+            list-style: none;
+            width:  200px;
+            background-color: #15327f;
+            border-radius: 10%
+        }
+        .menu-horizontal li:hover .menu-vertical{
+            display: block;
+        }
+
+        .menu-vertical > li:hover{
+            background-color: #153260;
+            border-radius: 10%
+
+        }
+
+        .menu-vertical > li > a{
+            padding:15px 20px 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        #logo{
+            width: 30px;
+            height: 30px;
+            border-radius: 100%
+
+        }
