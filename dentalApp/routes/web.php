@@ -37,4 +37,7 @@ Route::get('/agendar/nueva', [App\Http\Controllers\AgendaController::class, 'cre
 ROute::post('/agendar/separar', [App\Http\Controllers\AgendaController::class, 'store'])->name('agendar.separar');
 //ruta que me redirecciona a la vista create donde se visualizara que se creo la cita con exito
 route::get('/agendar/creada', [App\Http\Controllers\AgendaController::class, 'citaCorrecta'])->name('agendar.creada');
+//ruta que me redirecciona a la tabla de citas
+route::get('/agendar/visualizar', [App\Http\Controllers\AgendaController::class, 'tableAll'])->name('agendar.visualizar');
+
 

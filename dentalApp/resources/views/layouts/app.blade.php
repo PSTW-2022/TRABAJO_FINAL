@@ -102,7 +102,7 @@
                             <a class="navbar-brand text-light" href="#"><i class="bi bi-calendar2-date-fill"></i>{{ __(' Citas') }}</a>
                             <ul class='menu-vertical'>
                                 @if (Auth::check())
-                                <li><a class="nav-item text-light" href="{{ route('productos.index') }}">{{ __('Ver citas') }}</a></li>
+                                <li><a class="nav-item text-light" href="{{ route('agendar.visualizar') }}">{{ __('Ver citas') }}</a></li>
                                 @endif
                                 <li><a class="nav-item text-light" href="{{ route('agendar.nueva') }}">{{ __('Agendar') }}</a></li>
                             </ul>

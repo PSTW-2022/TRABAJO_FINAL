@@ -54,6 +54,13 @@ class AgendaController extends Controller
         return redirect()->route('agendar.creada')->with('success','Cita creada correctamente');
     }
 
+    public function tableAll()
+    {
+        $cita = Citas::all();
+
+        return view('agendar\tabla', compact('cita'));
+    }
+
     /**
      * Display the specified resource.
      *
