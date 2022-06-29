@@ -44,12 +44,10 @@ route::resource('trabajos', 'App\Http\Controllers\TrabajoController')->middlewar
 //ruta que me redirecciona a la tabla de trabajos
 route::get('trabajos/visualizar',[App\Http\Controllers\TrabajoController::class, 'tableAll'])->name('trabajos.visualizar')->middleware('auth');
 
-<<<<<<< HEAD
+
 Route::get('dowload-pdf', [App\Http\Controllers\AgendaController::class, 'generar_pdf'])->name('descargar-pdf');
 
-=======
 //vista para mostrar ayudas
 Route::get('ayuda', function () {
     return view('preguntasFrecuentes');
 });
->>>>>>> 023cbc8f78147ed0d2ec919bf7ca2c4a716f8f2b
