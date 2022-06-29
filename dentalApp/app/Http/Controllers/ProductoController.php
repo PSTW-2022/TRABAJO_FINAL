@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
-
+use Barryvdh\DomPDF\Facade as PDF;
 /**
  * Class ProductoController
  * @package App\Http\Controllers
@@ -114,5 +114,12 @@ class ProductoController extends Controller
 
         return redirect()->route('productos.index')
             ->with('success', 'Producto deleted successfully');
+    }
+
+    public function generar_pdf()
+    {
+        $producto = Producto::all();
+        $pdf = PDF::loadView('precios.reportePrecios', compact('producto'));
+        return $pdf->download('precios.pdf');
     }
 }

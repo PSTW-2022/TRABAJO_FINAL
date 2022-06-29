@@ -20,7 +20,7 @@
 
                     <div class="card-body">
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <strong>Nombreodontologo:</strong>
                             {{ $trabajo->nombreOdontologo }}
                         </div>
@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <strong>Fechasalida:</strong>
                             {{ $trabajo->fechaSalida }}
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>

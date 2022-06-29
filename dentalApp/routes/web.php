@@ -47,7 +47,10 @@ route::get('trabajos/visualizar',[App\Http\Controllers\TrabajoController::class,
 
 Route::get('dowload-pdf', [App\Http\Controllers\AgendaController::class, 'generar_pdf'])->name('descargar-pdf');
 
+Route::get('producto/dowload-pdf', [App\Http\Controllers\ProductoController::class, 'generar_pdf'])->name('precios-pdf');
+
 //vista para mostrar ayudas
 Route::get('ayuda', function () {
     return view('preguntasFrecuentes');
 });
+

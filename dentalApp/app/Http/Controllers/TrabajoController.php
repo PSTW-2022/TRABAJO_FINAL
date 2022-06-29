@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Trabajo;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 /**
  * Class TrabajoController
  * @package App\Http\Controllers
@@ -112,4 +113,11 @@ class TrabajoController extends Controller
         return redirect()->route('trabajos.index')
             ->with('success', 'Trabajo borrado correctamente');
     }
+
+    public function generar_pdf(){
+        $trabajos = Trabajo::all();
+        $pdf = PDF::loadView('trabajos.generar_pdf', compact('trabajos'));
+        return $pdf->download('trabajos.pdf');
+    }   //end generar_pdf
 }
+

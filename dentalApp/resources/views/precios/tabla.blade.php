@@ -24,6 +24,9 @@
                         @endforeach
                     </tbody>
                   </table>
+                  <br>
+                  <a href="{{ route('precios-pdf')}}" type="submit" class="btn btn-success">Descargar Reporte</a>
+                  <br>
                   <a type="submit" class="btn btn-info"  href="{{ asset('/') }}">Atrás</a>
             </div>
         </div>

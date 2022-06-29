@@ -15,7 +15,10 @@
                             <span id="card_title">
                                 {{ __('Trabajo') }}
                             </span>
-
+                            <div>
+                                <a href="{{ route('trabajos-pdf')}}" type="submit" class="btn btn-success">Descargar Reporte</a>
+                                <br>
+                            </div>
                              <div class="float-right">
                                 <a href="{{ route('trabajos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Nuevo trabajo') }}
