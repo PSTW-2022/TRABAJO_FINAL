@@ -34,10 +34,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //ruta que me redirige al formulario para la creacion de una nueva cita
 Route::get('/agendar/nueva', [App\Http\Controllers\AgendaController::class, 'create'])->name('agendar.nueva');
 //ruta que me obtiene los datos del formulario para la creacion de una nueva cita
-ROute::post('/agendar/separar', [App\Http\Controllers\AgendaController::class, 'store'])->name('agendar.separar');
+Route::post('/agendar/separar', [App\Http\Controllers\AgendaController::class, 'store'])->name('agendar.separar');
 //ruta que me redirecciona a la vista create donde se visualizara que se creo la cita con exito
 route::get('/agendar/creada', [App\Http\Controllers\AgendaController::class, 'citaCorrecta'])->name('agendar.creada');
 //ruta que me redirecciona a la tabla de citas
-route::get('/agendar/visualizar', [App\Http\Controllers\AgendaController::class, 'tableAll'])->name('agendar.visualizar');
+route::get('/agendar/visualizar', [App\Http\Controllers\AgendaController::class, 'tableAll'])->name('agendar.visualizar')->middleware('auth');
+//ruta que me redirecciona a la vista general de crud trabajos
+route::resource('trabajos', 'App\Http\Controllers\TrabajoController')->middleware('auth');
+//ruta que me redirecciona a la tabla de trabajos
+route::get('trabajos/visualizar',[App\Http\Controllers\TrabajoController::class, 'tableAll'])->name('trabajos.visualizar')->middleware('auth');
 
-
+//vista para mostrar ayudas
+Route::get('ayuda', function () {
+    return view('preguntasFrecuentes');
+});

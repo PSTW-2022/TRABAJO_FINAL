@@ -96,6 +96,12 @@
                         @if (Auth::check())
                         <li>
                             <a class="navbar-brand text-light" href="#"><i class="bi bi-file-word"></i>{{ __(' Trabajos') }}</a>
+                            <ul class='menu-vertical'>
+                                @if (Auth::check())
+                                <li><a class="nav-item text-light" href="{{ route('trabajos.visualizar') }}">{{ __('Ver trabajos') }}</a></li>
+                                @endif
+                                <li><a class="nav-item text-light" href="{{ route('trabajos.index') }}">{{ __('Gestionar trabajos') }}</a></li>
+                            </ul>
                         </li>
                         @endif
                         <li>
@@ -108,7 +114,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="navbar-brand text-light" href="#"><i class="bi bi-info-circle-fill"></i>{{ __(' Ayuda') }}</a>
+                            <a class="navbar-brand text-light" href="{{ url('ayuda')}}"><i class="bi bi-info-circle-fill"></i>{{ __(' Ayuda') }}</a>
                         </li>
                     </ul>
                     </div>
@@ -138,7 +144,7 @@
                                         {{ __('Salir') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ url('ayuda') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
